@@ -15,29 +15,72 @@ mysql -u root -p
 ```
 
 ## Create Table
-```
+```sql
 create database dbhw1
 use dbhw1
-CREATE TABLE `match` (matchId varchar(20), matchDuration int, matchType varchar(20), maxPlace int, numGroups int);
-LOAD DATA LOCAL INFILE '/data/match.csv' INTO TABLE `match` FIELDS TERMINATED BY ',' ENCLOSED BY '"' IGNORE 1 LINES;
-CREATE TABLE player_statistic (Id varchar(20), groupId varchar(20), matchId varchar(20), damageDealt double, DBNOs int, kills int, rideDistance double, walkDistance double, swimDistance double, winPlacePerc double, heals int, roadKills int);
-
+CREATE TABLE `match` (matchId varchar(20), 
+    matchDuration int, 
+    matchType varchar(20), 
+    maxPlace int, 
+    numGroups int);
+LOAD DATA 
+    LOCAL INFILE '/data/match.csv' 
+    INTO TABLE `match` 
+    FIELDS TERMINATED BY ',' 
+    ENCLOSED BY '"' 
+    IGNORE 1 LINES;
+CREATE TABLE player_statistic (Id varchar(20), 
+    groupId varchar(20), 
+    matchId varchar(20), 
+    assists int,
+    boosts int,
+    damageDealt double, 
+    DBNOs int, 
+    headshotKills int,
+    heals int,
+    killPlace int,
+    killPoints int,
+    kills int, 
+    killStreaks int,
+    longestKill double,
+    rankPoints int,
+    revives int,
+    rideDistance double, 
+    roadKills int,
+    swimDistance double, 
+    teamKills int,
+    vehicleDestroys int,
+    walkDistance double,
+    weaponsAcquired int,
+    winPoints int, 
+    winPlacePerc double);
+LOAD DATA 
+    LOCAL INFILE '/data/player_statistic.csv' 
+    INTO TABLE player_statistic 
+    FIELDS TERMINATED BY ',' 
+    ENCLOSED BY '"' 
+    IGNORE 1 LINES;
 ```
 
-### Used Column in player_statistic
+## Questions
 
-- Id
-- groupId
-- matchId
-- DBNOs
-- damageDealt
-- kills
-- walkDistance
-- swimDistance
-- rideDistance
-- winPlacePerc
-- heals
-- roadKills
+### Q1
+請列出每場比賽(matchId)擊倒敵人數(DBNOs)最多的數量,並根據擊倒數量(DBNOs)
+的數量由大到小排列,取前20筆列出
+
+## Notes
+
+### ORDER BY
+```
+SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1, column2, ... ASC|DESC;
+```
+
+### LIMIT
+```
+LIMIT begin, end;
+```
 
 ## Reference
 
