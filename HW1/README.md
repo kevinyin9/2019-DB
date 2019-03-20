@@ -62,12 +62,6 @@ LOAD DATA
     IGNORE 1 LINES;
 ```
 
-## Questions
-
-### Q1
-請列出每場比賽(matchId)擊倒敵人數(DBNOs)最多的數量,並根據擊倒數量(DBNOs)
-的數量由大到小排列,取前20筆列出
-
 ## Notes
 
 ### ORDER BY
@@ -81,6 +75,10 @@ ORDER BY column1, column2, ... ASC|DESC;
 ```
 LIMIT begin, end;
 ```
+
+## Bonus
+
+找出比賽類型為" "的比賽中，每一場longestKill總和最高的隊伍groupId和其longestKill總和groupLongestKills，並取groupLongestKills前10長列出。
 
 ## Reference
 
