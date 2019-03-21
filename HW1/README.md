@@ -78,7 +78,7 @@ LIMIT begin, end;
 
 ## Bonus
 
-找出比賽類型為" "的比賽中，每一場longestKill總和最高的隊伍groupId和其longestKill總和groupLongestKills，並取groupLongestKills前10長列出。
+找出比賽類型為 squad-fpp 的比賽中，每一場以隊伍為單位最高的 longestKill 總和 groupLongestKills，並配上 matchId 取前 10 長輸出。
 
 ## Reference
 
