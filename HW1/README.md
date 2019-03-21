@@ -16,8 +16,8 @@ mysql -u root -p
 
 ## Create Table
 ```sql
-create database dbhw1
-use dbhw1
+CREATE DATABASE dbhw1
+USE dbhw1
 CREATE TABLE `match` (matchId varchar(20), 
     matchDuration int, 
     matchType varchar(20), 
@@ -60,6 +60,12 @@ LOAD DATA
     FIELDS TERMINATED BY ',' 
     ENCLOSED BY '"' 
     IGNORE 1 LINES;
+```
+
+## Create Index
+```
+CREATE INDEX mmId ON `match` (matchId);
+CREATE INDEX pmId ON player_statistic (matchId);
 ```
 
 ## Notes
